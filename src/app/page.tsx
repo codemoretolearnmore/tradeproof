@@ -102,7 +102,7 @@ export default function HomePage() {
 
         {/* Feature Cards */}
         <section id="vision" className="mt-12 rounded-2xl p-8 border border-slate-100 bg-gradient-to-b from-white to-slate-50">
-          <h3 className="text-2xl font-bold mb-6">Where we're headed</h3>
+          <h3 className="text-2xl font-bold mb-6">Where we are headed</h3>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
             <FeatureCard title="Strategy Marketplace" desc="Share and buy strategies validated by data. Earn from what you build." />
             <FeatureCard title="Auto Execution" desc="Connect to brokers and run your tested setups with safety controls." />
