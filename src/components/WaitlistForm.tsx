@@ -6,7 +6,7 @@ export default function WaitlistForm() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [interest, setInterest] = useState(
-    "I'm a beginner — want safe strategies"
+    "I am a beginner — want safe strategies"
   );
 
   const handleSubmit = (e: React.FormEvent) => {
@@ -41,9 +41,9 @@ export default function WaitlistForm() {
         onChange={(e) => setInterest(e.target.value)}
         className="rounded-md border border-slate-200 p-3 bg-white text-sm"
       >
-        <option>I'm a beginner — want safe strategies</option>
-        <option>I'm an intraday trader — want fast backtests</option>
-        <option>I'm a quant — interested to automate</option>
+        <option>I am a beginner — want safe strategies</option>
+        <option>I am an intraday trader — want fast backtests</option>
+        <option>I am a quant — interested to automate</option>
       </select>
       <button
         type="submit"
