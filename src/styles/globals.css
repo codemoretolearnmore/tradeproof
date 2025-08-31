@@ -1,0 +1,8 @@
+html {
+  scroll-behavior: smooth;
+}
+
+/* Optional: add some padding to sections so sticky header doesn't overlap */
+section[id] {
+  scroll-margin-top: 6rem; /* adjust based on header height */
+}

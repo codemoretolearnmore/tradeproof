@@ -1,9 +1,9 @@
-import React from "react";
-import WaitlistForm from "@/components/WaitlistForm";
-import Image from "next/image";
-import exampleImg from "@/assets/demo.png"
-// Step component
-function Step({ index, title, desc, example }: { index: number; title: string; desc: string; example: string }) {
+// src/app/page.tsx
+// Next.js 13+ with App Router, TypeScript, TailwindCSS
+"use client"
+import React from 'react';
+
+function Step({ index, title, desc, example }: { index: number, title: string, desc: string, example: string }) {
   return (
     <div className="flex gap-4 items-start">
       <div className="w-9 h-9 bg-indigo-50 rounded-lg flex items-center justify-center font-semibold text-indigo-600">{index}</div>
@@ -16,8 +16,7 @@ function Step({ index, title, desc, example }: { index: number; title: string; d
   );
 }
 
-// FeatureCard component
-function FeatureCard({ title, desc }: { title: string; desc: string }) {
+function FeatureCard({ title, desc }: { title: string, desc: string }) {
   return (
     <div className="p-4 bg-white rounded-lg border border-slate-100">
       <div className="text-sm font-semibold">{title}</div>
@@ -26,8 +25,7 @@ function FeatureCard({ title, desc }: { title: string; desc: string }) {
   );
 }
 
-// Server Component page
-export default function HomePage() {
+export default function Home() {
   return (
     <div className="min-h-screen bg-slate-50 text-slate-900 antialiased">
       {/* Topbar */}
@@ -71,9 +69,7 @@ export default function HomePage() {
               </div>
               <div className="p-4">
                 <div className="h-48 relative bg-gradient-to-b from-white to-slate-50 rounded-lg p-3">
-                  <Image src ={exampleImg} alt="Demo Image" fill
-    style={{ objectFit: "cover", borderRadius: "0.5rem" }}/>
-                  {/* <svg viewBox="0 0 300 120" className="w-full h-full">
+                  <svg viewBox="0 0 300 120" className="w-full h-full">
                     <defs>
                       <linearGradient id="g1" x1="0" x2="1">
                         <stop offset="0%" stopColor="#a78bfa" />
@@ -81,8 +77,8 @@ export default function HomePage() {
                       </linearGradient>
                     </defs>
                     <polyline fill="none" stroke="url(#g1)" strokeWidth="3" strokeLinecap="round" points="0,90 30,80 60,60 90,70 120,50 150,45 180,55 210,35 240,30 270,40 300,20" />
-                    <circle cx="300" cy="20" r="4" className="animate-[pulse_2s_ease-in-out_infinite]" />
-                  </svg> */}
+                    <circle cx="300" cy="20" r="4" className="animate-pulse-slow" />
+                  </svg>
                   <div className="absolute left-4 bottom-3 bg-white/80 px-3 py-1 rounded-md text-xs text-slate-700">Equity curve • 2y</div>
                 </div>
               </div>
@@ -100,7 +96,7 @@ export default function HomePage() {
           </div>
         </section>
 
-        {/* Feature Cards */}
+        {/* Future Vision / Feature Cards */}
         <section id="vision" className="mt-12 rounded-2xl p-8 border border-slate-100 bg-gradient-to-b from-white to-slate-50">
           <h3 className="text-2xl font-bold mb-6">Where we're headed</h3>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
@@ -110,125 +106,30 @@ export default function HomePage() {
           </div>
         </section>
 
-        {/* Pricing Section */}
-        {/* Pricing Section */}
-        <section
-          id="pricing"
-          className="mt-12 rounded-2xl p-8 bg-white border border-slate-100 shadow"
-        >
-          <h3 className="text-2xl font-bold mb-8 text-center">Pricing Plans</h3>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {/* Starter Plan */}
-            <div className="p-6 border rounded-lg shadow-sm flex flex-col">
-              <h4 className="text-lg font-semibold mb-4 text-center">Starter</h4>
-              <div className="text-2xl font-bold mb-6 text-center">Free</div>
-              <ul className="space-y-2 mb-6">
-                <li className="flex items-center gap-2">
-                  <span className="text-green-600 font-bold">✓</span> Test 2 strategies/month
-                </li>
-                <li className="flex items-center gap-2">
-                  <span className="text-red-500 font-bold">✕</span> Advanced analytics
-                </li>
-                <li className="flex items-center gap-2">
-                  <span className="text-red-500 font-bold">✕</span> Automation
-                </li>
-                <li className="flex items-center gap-2">
-                  <span className="text-red-500 font-bold">✕</span> Premium features
-                </li>
-                <li className="flex items-center gap-2">
-                  <span className="text-red-500 font-bold">✕</span> 24*7 support
-                </li>
-              </ul>
-              <a
-                href="#waitlist"
-                className="px-4 py-2 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 text-center"
-              >
-                Join Waitlist
-              </a>
-            </div>
-
-            {/* Pro Plan */}
-            <div className="p-6 border rounded-lg shadow-sm flex flex-col">
-              <h4 className="text-lg font-semibold mb-4 text-center">Pro</h4>
-              <div className="text-2xl font-bold mb-6 text-center">₹499/month</div>
-              <ul className="space-y-2 mb-6">
-                <li className="flex items-center gap-2">
-                  <span className="text-green-600 font-bold">✓</span> Test 20 strategies/month
-                </li>
-                <li className="flex items-center gap-2">
-                  <span className="text-green-600 font-bold">✓</span> Advanced analytics
-                </li>
-                <li className="flex items-center gap-2">
-                  <span className="text-green-600 font-bold">✓</span> Enable automation
-                </li>
-                <li className="flex items-center gap-2">
-                  <span className="text-green-600 font-bold">✓</span> Early access to premium features
-                </li>
-                <li className="flex items-center gap-2">
-                  <span className="text-green-600 font-bold">✓</span> 24*7 support
-                </li>
-              </ul>
-              <a
-                href="#waitlist"
-                className="px-4 py-2 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 text-center"
-              >
-                Join Waitlist
-              </a>
-            </div>
-
-            {/* Enterprise Plan */}
-            <div className="p-6 border rounded-lg shadow-sm flex flex-col">
-              <h4 className="text-lg font-semibold mb-4 text-center">Enterprise</h4>
-              <div className="text-2xl font-bold mb-6 text-center">Custom</div>
-              <ul className="space-y-2 mb-6">
-                <li className="flex items-center gap-2">
-                  <span className="text-green-600 font-bold">✓</span> Unlimited strategy testing
-                </li>
-                <li className="flex items-center gap-2">
-                  <span className="text-green-600 font-bold">✓</span> Advanced & customized analytics
-                </li>
-                <li className="flex items-center gap-2">
-                  <span className="text-green-600 font-bold">✓</span> Full automation
-                </li>
-                <li className="flex items-center gap-2">
-                  <span className="text-green-600 font-bold">✓</span> Early access to premium features
-                </li>
-                <li className="flex items-center gap-2">
-                  <span className="text-green-600 font-bold">✓</span> 24*7 support
-                </li>
-              </ul>
-              <a
-                href="#waitlist"
-                className="px-4 py-2 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 text-center"
-              >
-                Join Waitlist
-              </a>
-            </div>
-          </div>
-        </section>
-
-
-
-
         {/* Waitlist Form */}
         <section id="waitlist" className="mt-12 rounded-2xl p-6 bg-gradient-to-br from-indigo-50 to-white border border-slate-100 shadow">
           <h3 className="text-lg font-semibold mb-2">Join the waitlist</h3>
           <p className="text-slate-600 mb-4">Get early access and exclusive founding-member pricing.</p>
-          <WaitlistForm />
-          <p className="mt-3 text-sm text-slate-500">
-            Or you can reach out to me directly at{" "}
-            <a
-              href="mailto:tradeproof47@gmail.com"
-              className="text-indigo-600 hover:underline"
-            >
-              xx@email.com
-            </a>
-          </p>
+          <form className="grid gap-3" onSubmit={(e) => { e.preventDefault(); alert('Form submitted (placeholder)'); }}>
+            <input name="name" placeholder="Your name (optional)" className="w-full rounded-md border border-slate-200 p-3 bg-white text-sm" />
+            <input name="email" type="email" required placeholder="Email address" className="w-full rounded-md border border-slate-200 p-3 bg-white text-sm" />
+            <select name="interest" className="rounded-md border border-slate-200 p-3 bg-white text-sm">
+              <option>I'm a beginner — want safe strategies</option>
+              <option>I'm an intraday trader — want fast backtests</option>
+              <option>I'm a quant — interested to automate</option>
+            </select>
+            <button type="submit" className="px-4 py-3 rounded-lg bg-indigo-600 text-white font-semibold">Reserve my spot</button>
+          </form>
         </section>
       </main>
 
       <footer className="mt-8 text-center text-sm text-slate-500 pb-6">Built by a trader • No hype — just data. © {new Date().getFullYear()} TradeProof</footer>
+
+      {/* Animations */}
+      <style jsx>{`
+        @keyframes pulse-slow { 0%,100% { r:4 } 50% { r:6 } }
+        .animate-pulse-slow { animation: pulse-slow 2s ease-in-out infinite; }
+      `}</style>
     </div>
   );
 }
